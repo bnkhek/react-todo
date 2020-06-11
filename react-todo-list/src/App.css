@@ -13,6 +13,7 @@
   }
 }
 
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -26,6 +27,34 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.checkboxInput {
+  width: 30px;
+  height: 30px;
+  padding: 15px;
+  margin:10px;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;
+}
+
+button{
+  margin: 15px;
+  position: relative;
+  vertical-align: center;
+  top: -8px;
+  padding: 8px;
+}
+
+input{
+  height: 20px;
+}
+
+a{
+  font-size: 48;
+  background-color: white;
 }
 
 @keyframes App-logo-spin {

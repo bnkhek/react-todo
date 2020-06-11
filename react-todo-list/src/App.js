@@ -26,17 +26,28 @@ function App() {
   function toggleComplete(id) {
     setTodos(
       todos.map((todo) => {
+        if (todo.id === id){
+          return{
+            ...todo,
+            completed: !todo.completed
+          };
+        }
         return todo;
       })
     );
   }
 
+  function removeTodo(id){
+    setTodos(todos.filter(todo => todo.id !== id))
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <p>React ToDo</p>
+        <a href = "https://github.com/bnkrandon/react-todo" target = "_blank" rel="noopener noreferrer"> React To-Do List </a>
+        <p>Brandon Khek OSA</p>
         <TodoForm addTodo={addTodo} />
-        <TodoList todos={todos} />
+        <TodoList todos={todos} toggleComplete = {toggleComplete} removeTodo = {removeTodo}/>
       </header>
     </div>
   );

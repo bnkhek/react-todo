@@ -1,18 +1,32 @@
 import React from "react";
 
-function Todo({ todo }) {
+function Todo({ todo, toggleComplete, removeTodo }) {
+  
+  function handleCheckboxClick(){
+    toggleComplete(todo.id);
+  }
+  
+  function handleRemoveClick(){
+    removeTodo(todo.id);
+  }
+
   return (
     <div style={{ display: "flex" }}>
-      <input type="checkbox" />
+      <input 
+        type="checkbox"
+        onClick = {handleCheckboxClick}
+        className = "checkboxInput"
+      />
       <li
         style={{
-          color: "white",
+          color: todo.completed ? "red" : "white",
           textDecoration: todo.completed ? "line-through" : null,
+          listStyleType: "none"
         }}
       >
         {todo.task}
       </li>
-      <button>X</button>
+      <button onClick = {handleRemoveClick}>X</button>
     </div>
   );
 }
